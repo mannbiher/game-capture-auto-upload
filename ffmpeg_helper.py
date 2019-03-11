@@ -30,11 +30,11 @@ def create_thumbnails(video_file, folder):
 def insert_watermark(input_file, out_file, image_path):
     """ Insert watermark on video."""
     ffmpeg_args = ['ffmpeg',
-                       '-i', input_file,
-                       '-i', image_path,
-                       '-filter_complex', 'overlay=10:10',
-                       '-crf', '18',
-                       '-y', out_file]
+                   '-i', input_file,
+                   '-i', image_path,
+                   '-filter_complex', 'overlay=10:10',
+                   '-crf', '18',
+                   '-y', out_file]
     process = subprocess.run(ffmpeg_args, capture_output=True)
 
     if process.returncode != 0:
@@ -43,4 +43,3 @@ def insert_watermark(input_file, out_file, image_path):
         else:
             logger.debug(process.stdout)
         raise FfmpegFileError('Input file cannot be processed.')
-        

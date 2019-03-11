@@ -111,13 +111,13 @@ class Processor(PatternMatchingEventHandler):
         logger.info('%s is processed.', orig_file)
 
         # 20 category is Gaming
-        tags = 'residentevil2,2019,pc,hd,resident,evil,claire'
-        video_id = upload.upload_file(out_file,
-                                      orig_file,
-                                      category='20',
-                                      keywords=tags)
+        # tags = 'residentevil2,2019,pc,hd,resident,evil,claire'
+        # video_id = upload.upload_file(out_file,
+        #                               orig_file,
+        #                               category='20',
+        #                               keywords=tags)
 
-        logger.info('video %s upload for %s', video_id, orig_file)
+        # logger.info('video %s upload for %s', video_id, orig_file)
 
         # thumbnail = create_thumbnail(folder, input_file)
         # logger.info('Thumbnails created for %s.', orig_file)

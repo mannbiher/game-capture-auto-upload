@@ -12,6 +12,6 @@ for proc in psutil.process_iter():
     except psutil.AccessDenied:
         print('access denied for: ', proc.name())
     # This catches a race condition where a process ends
-    # before we can examine its files    
+    # before we can examine its files
     except psutil.NoSuchProcess as err:
-        print("****",err) 
+        print("****", err)

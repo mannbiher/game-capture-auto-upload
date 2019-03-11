@@ -20,3 +20,12 @@ def get_random_largest_file(folder, filter):
     filtered_files = [file_ for file_ in files if filter in files]
     shuffle(filtered_files)
     return filtered_files[0]
+
+
+def get_files_by_modified_date(folder):
+    all_files = (
+        os.path.join(basedir, filename)
+        for basedir, dirs, files in os.walk(folder)
+        for filename in files)
+    sorted_files = sorted(all_files, key=os.path.getmtime)
+    return sorted_files
